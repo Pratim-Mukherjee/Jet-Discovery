@@ -1,0 +1,26 @@
+data:
+  zenodo_id: "2603256"
+  train_samples: 1200000
+  val_samples: 400000
+  test_samples: 400000
+  max_particles: 200
+  features: ["E", "px", "py", "pz"]
+
+model:
+  latent_dim: 32
+  ensemble_weights: [0.4, 0.3, 0.3]  # MLP, Conv, Graph
+  
+training:
+  batch_size: 256
+  epochs: 100
+  learning_rate: 1e-3
+  weight_decay: 1e-5
+  
+physics:
+  energy_weight: 0.1
+  mass_weight: 0.05
+  pt_weight: 0.05
+
+api:
+  host: "0.0.0.0"
+  port: 8000
