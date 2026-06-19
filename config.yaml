@@ -1,0 +1,22 @@
+data:
+  max_particles: 100          # Half the original input size
+  features: ["E", "px", "py", "pz"]
+
+model:
+  latent_dim: 16              # Smaller bottleneck – faster and still meaningful
+  ensemble_weights: [0.4, 0.3, 0.3]
+
+training:
+  batch_size: 256
+  epochs: 3                   # Only 3 epochs – enough for a proof of concept
+  learning_rate: 0.001
+  weight_decay: 1e-5
+
+physics:
+  energy_weight: 0.1
+  mass_weight: 0.05
+  pt_weight: 0.05
+
+api:
+  host: "0.0.0.0"
+  port: 8000
